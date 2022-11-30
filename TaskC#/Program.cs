@@ -1,6 +1,6 @@
 ﻿Console.Write("Введите значения элементов массива строк через пробел: ");
 string[] stringArray = Console.ReadLine().Split().ToArray();
-
+ 
 void PrintArray(string[] stringArr)
 {
     Console.Write("[");
@@ -11,7 +11,7 @@ void PrintArray(string[] stringArr)
     }
     Console.Write("]");
 }
-
+ 
 string [] SortArray(string[] stringArr)
 {
     int k = 0;
@@ -27,6 +27,18 @@ string [] SortArray(string[] stringArr)
     Array.Resize(ref sortArray, k);
     return sortArray;
 }
-
-string[] sortArray = SortArray();
-PrintArray(sortArray);
+ 
+void PrintSortArray(string[] sortArr)
+{
+    Console.Write("[");
+    for (int i = 0; i < sortArr.Length; i++)
+    {
+        if (i < (sortArr.Length - 1)) Console.Write($"{sortArr[i]}, ");
+        else Console.Write($"{sortArr[i]}");
+    }
+    Console.Write("]");
+}
+PrintArray(stringArray);
+string[] sortArray = SortArray(stringArray);
+Console.Write(" -> ");
+PrintSortArray(sortArray);
